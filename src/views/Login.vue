@@ -50,7 +50,7 @@
         <span class="h-px w-full bg-gray-300"></span>
       </div>
 
-      <form class="space-y-4" action="#" method="POST">
+      <form class="space-y-4" @submit.prevent="$router.push({ name: 'dashboard' })">
         <div class="relative text-gray-400">
           <span class="absolute inset-y-0 left-0 flex items-center pl-2">
             <svg
