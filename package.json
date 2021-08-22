@@ -7,8 +7,10 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "apexcharts": "^3.27.3",
     "vue": "^3.0.5",
-    "vue-router": "^4.0.11"
+    "vue-router": "^4.0.11",
+    "vue3-apexcharts": "^1.4.1"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.4.0",
