@@ -12,7 +12,7 @@
   </div>
 
   <div class="px-8 grid grid-cols-4 gap-4 mt-8">
-    <div class="flex items-center border rounded-sm overflow-hidden shadow">
+    <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow">
       <div class="p-4 bg-green-400">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <div class="flex items-center border rounded-sm overflow-hidden shadow">
+    <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow">
       <div class="p-4 bg-blue-400">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <div class="flex items-center border rounded-sm overflow-hidden shadow">
+    <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow">
       <div class="p-4 bg-indigo-400">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@
       </div>
     </div>
 
-    <div class="flex items-center border rounded-sm overflow-hidden shadow">
+    <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow">
       <div class="p-4 bg-red-400">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -106,16 +106,18 @@
   </div>
 
   <div class="px-8 grid grid-cols-3 gap-4 mt-8">
-    <div class="px-4 py-2 border rounded-md overflow-hidden shadow">
+    <div class="px-4 py-2 bg-white border rounded-md overflow-hidden shadow">
       <h3 class="text-xl text-gray-600 mb-4">Page View</h3>
       <apexchart type="area" :height="300" :options="pageViewOptions" :series="pageViewSeries"></apexchart>
     </div>
-    <div class="px-4 py-2 border rounded-md overflow-hidden shadow">
+
+    <div class="px-4 py-2 bg-white border rounded-md overflow-hidden shadow">
       <h3 class="text-xl text-gray-600 mb-4">Sessions by device</h3>
       <apexchart type="donut" :height="300" :options="sessionsOptions" :series="sessionsSeries"></apexchart>
     </div>
+
     <div class="grid grid-rows-2 gap-4">
-      <div class="px-4 py-2 border rounded-md shadow">
+      <div class="px-4 py-2 bg-white border rounded-md shadow">
         <h3 class="text-xl text-gray-600 mb-2">Popular Post</h3>
 
         <div class="flex flex-col">
@@ -152,7 +154,7 @@
           </div>
         </div>
       </div>
-      <div class="px-4 py-2 border rounded-md shadow">
+      <div class="px-4 py-2 bg-white border rounded-md shadow">
         <h3 class="text-xl text-gray-600 mb-2">Top Contributor</h3>
 
         <div class="flex flex-col">
@@ -201,7 +203,7 @@
 
   <div class="px-8 grid grid-cols-5 gap-4 mt-8">
     <TabGroup>
-      <div class="col-span-2 border rounded-lg shadow">
+      <div class="col-span-2 bg-white border rounded-lg shadow">
         <div class="flex justify-between items-center px-4 mb-2 py-2 border-b-2 text-gray-600">
           <h3 class="tracking-wider">Top Author</h3>
           <TabList class="flex space-x-1">
@@ -411,7 +413,7 @@
       </div>
     </TabGroup>
 
-    <div class="col-span-3 border rounded-lg shadow">
+    <div class="col-span-3 bg-white border rounded-lg shadow">
       <div class="flex justify-between items-center px-4 py-2 mb-2 border-b-2 text-gray-600">
         <h3 class="tracking-wider">Recent Sales</h3>
         <button class="border rounded-sm bg-gray-200 px-4 py-2 text-xs hover:bg-gray-300">View All</button>

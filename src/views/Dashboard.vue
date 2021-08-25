@@ -2,7 +2,7 @@
   <div class="flex min-h-screen">
     <the-sidebar />
 
-    <div class="flex flex-col flex-grow bg-gray-100">
+    <div class="flex flex-col flex-grow bg-gray-200">
       <the-header />
 
       <div class="mb-auto">

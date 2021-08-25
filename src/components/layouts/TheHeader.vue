@@ -1,5 +1,5 @@
 <template>
-  <header class="flex justify-end bg-gray-100 border-b-2 px-6">
+  <header class="flex justify-end bg-white border-b-2 px-6">
     <Menu as="div" class="relative">
       <MenuButton class="flex items-center space-x-2 px-2 py-3 text-sm hover:bg-gray-200 focus:outline-none">
         <img
@@ -34,7 +34,7 @@
             w-48
             shadow-lg
             py-1
-            bg-gray-100
+            bg-white
             ring-1 ring-black ring-opacity-5
             divide-y divide-gray-200
             focus:outline-none
