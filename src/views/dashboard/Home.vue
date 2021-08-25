@@ -198,15 +198,515 @@
       </div>
     </div>
   </div>
+
+  <div class="px-8 grid grid-cols-5 gap-4 mt-8">
+    <TabGroup>
+      <div class="col-span-2 border rounded-lg shadow">
+        <div class="flex justify-between items-center px-4 mb-2 py-2 border-b-2 text-gray-600">
+          <h3 class="tracking-wider">Top Author</h3>
+          <TabList class="flex space-x-1">
+            <Tab v-slot="{ selected }">
+              <button
+                class="px-4 py-2 text-xs rounded-md hover:bg-blue-400 hover:text-white"
+                :class="selected ? 'bg-blue-400 text-white' : ''"
+              >
+                Today
+              </button></Tab
+            >
+            <Tab v-slot="{ selected }">
+              <button
+                class="px-4 py-2 text-xs rounded-md hover:bg-blue-400 hover:text-white"
+                :class="selected ? 'bg-blue-400 text-white' : ''"
+              >
+                Yesterday
+              </button></Tab
+            >
+            <Tab v-slot="{ selected }">
+              <button
+                class="px-4 py-2 text-xs rounded-md hover:bg-blue-400 hover:text-white"
+                :class="selected ? 'bg-blue-400 text-white' : ''"
+              >
+                Last 7 Days
+              </button></Tab
+            >
+          </TabList>
+        </div>
+
+        <TabPanels class="px-4 py-2">
+          <TabPanel>
+            <table class="min-w-full text-gray-500">
+              <tbody class="">
+                <tr v-for="author in topAuthorToday" :key="author.username">
+                  <td class="flex items-center p-2">
+                    <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" :src="author.avatar" alt="" />
+                    <div class="px-4">
+                      <div>{{ author.name }}</div>
+                      <div class="font-bold text-sm">
+                        <a href="#">@{{ author.username }}</a>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="p-2 text-right">
+                    <div class="text-2xl">{{ author.postViews }}</div>
+                    <div class="text-sm">Post Views</div>
+                  </td>
+                  <td class="p-2 text-right">
+                    <div class="text-sm">{{ author.genre }}</div>
+                  </td>
+                  <td class="p-2 space-x-2 text-right">
+                    <button class="p-1 rounded-md bg-green-500 text-white hover:bg-green-600">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        />
+                      </svg>
+                    </button>
+                    <button class="p-1 rounded-md bg-red-500 text-white hover:bg-red-600">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                        />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </TabPanel>
+          <TabPanel>
+            <table class="min-w-full text-gray-500">
+              <tbody class="">
+                <tr v-for="author in topAuthorYesterday" :key="author.username">
+                  <td class="flex items-center p-2">
+                    <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" :src="author.avatar" alt="" />
+                    <div class="px-4">
+                      <div>{{ author.name }}</div>
+                      <div class="font-bold text-sm">
+                        <a href="#">@{{ author.username }}</a>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="p-2 text-right">
+                    <div class="text-2xl">{{ author.postViews }}</div>
+                    <div class="text-sm">Post Views</div>
+                  </td>
+                  <td class="p-2 text-right">
+                    <div class="text-sm">{{ author.genre }}</div>
+                  </td>
+                  <td class="p-2 space-x-2 text-right">
+                    <button class="p-1 rounded-md bg-green-500 text-white hover:bg-green-600">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        />
+                      </svg>
+                    </button>
+                    <button class="p-1 rounded-md bg-red-500 text-white hover:bg-red-600">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                        />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </TabPanel>
+          <TabPanel>
+            <table class="min-w-full text-gray-500">
+              <tbody class="">
+                <tr v-for="author in topAuthorLastWeek" :key="author.username">
+                  <td class="flex items-center p-2">
+                    <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" :src="author.avatar" alt="" />
+                    <div class="px-4">
+                      <div>{{ author.name }}</div>
+                      <div class="font-bold text-sm">
+                        <a href="#">@{{ author.username }}</a>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="p-2 text-right">
+                    <div class="text-2xl">{{ author.postViews }}</div>
+                    <div class="text-sm">Post Views</div>
+                  </td>
+                  <td class="p-2 text-right">
+                    <div class="text-sm">{{ author.genre }}</div>
+                  </td>
+                  <td class="p-2 space-x-2 text-right">
+                    <button class="p-1 rounded-md bg-green-500 text-white hover:bg-green-600">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        />
+                      </svg>
+                    </button>
+                    <button class="p-1 rounded-md bg-red-500 text-white hover:bg-red-600">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                        />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </TabPanel>
+        </TabPanels>
+      </div>
+    </TabGroup>
+
+    <div class="col-span-3 border rounded-lg shadow">
+      <div class="flex justify-between items-center px-4 py-2 mb-2 border-b-2 text-gray-600">
+        <h3 class="tracking-wider">Recent Sales</h3>
+        <button class="border rounded-sm bg-gray-200 px-4 py-2 text-xs hover:bg-gray-300">View All</button>
+      </div>
+      <div class="px-4">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead>
+            <tr>
+              <th scope="col" class="py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Order ID
+              </th>
+
+              <th scope="col" class="py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Item
+              </th>
+
+              <th scope="col" class="py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Amount
+              </th>
+
+              <th scope="col" class="py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Status
+              </th>
+
+              <th scope="col" class="py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 text-sm text-gray-500">
+            <tr>
+              <td class="py-4 whitespace-nowrap">TM0452</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">iPhone 12</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">$999</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">
+                <span class="px-2 py-1 bg-green-500 rounded text-xs text-white">Shipped</span>
+              </td>
+              <td class="py-4 whitespace-nowrap text-sm text-blue-600"><a href="#">View Detail</a></td>
+            </tr>
+            <tr>
+              <td class="py-4 whitespace-nowrap">TM0451</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">Playstation 5</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">$399</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">
+                <span class="px-2 py-1 bg-blue-500 rounded text-xs text-white">Processing</span>
+              </td>
+              <td class="py-4 whitespace-nowrap text-sm text-blue-600"><a href="#">View Detail</a></td>
+            </tr>
+            <tr>
+              <td class="py-4 whitespace-nowrap">TM0450</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">Google Nest Mini 2</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">$49</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">
+                <span class="px-2 py-1 bg-yellow-500 rounded text-xs text-white">Pending</span>
+              </td>
+              <td class="py-4 whitespace-nowrap text-sm text-blue-600"><a href="#">View Detail</a></td>
+            </tr>
+            <tr>
+              <td class="py-4 whitespace-nowrap">TM0449</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">Nike Air Jordan</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">$129</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">
+                <span class="px-2 py-1 bg-red-500 rounded text-xs text-white">Failed</span>
+              </td>
+              <td class="py-4 whitespace-nowrap text-sm text-blue-600"><a href="#">View Detail</a></td>
+            </tr>
+            <tr>
+              <td class="py-4 whitespace-nowrap">TM0448</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">Smart Watch</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">$299</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">
+                <span class="px-2 py-1 bg-yellow-500 rounded text-xs text-white">Pending</span>
+              </td>
+              <td class="py-4 whitespace-nowrap text-sm text-blue-600"><a href="#">View Detail</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="py-2 flex items-center justify-between border-t border-gray-200">
+          <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+            <div>
+              <p class="text-sm text-gray-500">
+                Showing
+                <span class="font-medium">1</span>
+                to
+                <span class="font-medium">5</span>
+                of
+                <span class="font-medium">42</span>
+                results
+              </p>
+            </div>
+            <div>
+              <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                <a
+                  href="#"
+                  class="
+                    relative
+                    inline-flex
+                    items-center
+                    px-2
+                    rounded-l-md
+                    border border-gray-300
+                    text-sm
+                    font-medium
+                    text-gray-500
+                    hover:bg-gray-50
+                  "
+                >
+                  <span class="sr-only">Previous</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </a>
+                <!-- Current: "z-10 bg-indigo-50 border-indigo-500 text-indigo-600", Default: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50" -->
+                <a
+                  href="#"
+                  aria-current="page"
+                  class="
+                    z-10
+                    bg-indigo-50
+                    border-indigo-500
+                    text-indigo-600
+                    relative
+                    inline-flex
+                    items-center
+                    px-4
+                    py-1
+                    border
+                    text-sm
+                    font-medium
+                  "
+                >
+                  1
+                </a>
+                <a
+                  href="#"
+                  class="
+                    border-gray-300
+                    text-gray-500
+                    hover:bg-gray-50
+                    relative
+                    inline-flex
+                    items-center
+                    px-4
+                    py-1
+                    border
+                    text-sm
+                    font-medium
+                  "
+                >
+                  2
+                </a>
+                <a
+                  href="#"
+                  class="
+                    border-gray-300
+                    text-gray-500
+                    hover:bg-gray-50
+                    hidden
+                    md:inline-flex
+                    relative
+                    items-center
+                    px-4
+                    py-1
+                    border
+                    text-sm
+                    font-medium
+                  "
+                >
+                  3
+                </a>
+                <span
+                  class="
+                    relative
+                    inline-flex
+                    items-center
+                    px-4
+                    py-1
+                    border border-gray-300
+                    text-sm
+                    font-medium
+                    text-gray-700
+                  "
+                >
+                  ...
+                </span>
+                <a
+                  href="#"
+                  class="
+                    border-gray-300
+                    text-gray-500
+                    hover:bg-gray-50
+                    hidden
+                    md:inline-flex
+                    relative
+                    items-center
+                    px-4
+                    py-1
+                    border
+                    text-sm
+                    font-medium
+                  "
+                >
+                  8
+                </a>
+                <a
+                  href="#"
+                  class="
+                    border-gray-300
+                    text-gray-500
+                    hover:bg-gray-50
+                    relative
+                    inline-flex
+                    items-center
+                    px-4
+                    py-1
+                    border
+                    text-sm
+                    font-medium
+                  "
+                >
+                  9
+                </a>
+                <a
+                  href="#"
+                  class="
+                    border-gray-300
+                    text-gray-500
+                    hover:bg-gray-50
+                    relative
+                    inline-flex
+                    items-center
+                    px-4
+                    py-1
+                    border
+                    text-sm
+                    font-medium
+                  "
+                >
+                  10
+                </a>
+                <a
+                  href="#"
+                  class="
+                    relative
+                    inline-flex
+                    items-center
+                    px-2
+                    py-1
+                    rounded-r-md
+                    border border-gray-300
+                    text-sm
+                    font-medium
+                    text-gray-500
+                    hover:bg-gray-50
+                  "
+                >
+                  <span class="sr-only">Next</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
 import VueApexCharts from 'vue3-apexcharts'
+import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue'
 
 export default {
   components: {
     apexchart: VueApexCharts,
+    TabGroup,
+    TabList,
+    Tab,
+    TabPanels,
+    TabPanel,
   },
 
   setup() {
@@ -244,11 +744,143 @@ export default {
 
     const sessionsSeries = [70.9, 27.2, 1.9]
 
+    const topAuthorToday = [
+      {
+        avatar:
+          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Bagas Kuslaksono',
+        username: 'bagas',
+        postViews: 2380,
+        genre: 'Science Fiction',
+      },
+      {
+        avatar:
+          'https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Ahmad Jaelani',
+        username: 'jaelani',
+        postViews: 2214,
+        genre: 'Action & Adventure',
+      },
+      {
+        avatar:
+          'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Lucy Jones',
+        username: 'lucy',
+        postViews: 1988,
+        genre: 'Fantasy',
+      },
+      {
+        avatar:
+          'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'David Steele',
+        username: 'dave',
+        postViews: 1674,
+        genre: 'Mystery',
+      },
+      {
+        avatar:
+          'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Jennifer Rowe',
+        username: 'jenn',
+        postViews: 1224,
+        genre: 'Romance',
+      },
+    ]
+
+    const topAuthorYesterday = [
+      {
+        avatar:
+          'https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Ahmad Jaelani',
+        username: 'jaelani',
+        postViews: 2514,
+        genre: 'Action & Adventure',
+      },
+      {
+        avatar:
+          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Bagas Kuslaksono',
+        username: 'bagas',
+        postViews: 2109,
+        genre: 'Science Fiction',
+      },
+      {
+        avatar:
+          'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Jennifer Rowe',
+        username: 'jenn',
+        postViews: 1764,
+        genre: 'Romance',
+      },
+      {
+        avatar:
+          'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Lucy Jones',
+        username: 'lucy',
+        postViews: 1450,
+        genre: 'Fantasy',
+      },
+      {
+        avatar:
+          'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'David Steele',
+        username: 'dave',
+        postViews: 1190,
+        genre: 'Mystery',
+      },
+    ]
+
+    const topAuthorLastWeek = [
+      {
+        avatar:
+          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Bagas Kuslaksono',
+        username: 'bagas',
+        postViews: 15380,
+        genre: 'Science Fiction',
+      },
+      {
+        avatar:
+          'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'David Steele',
+        username: 'dave',
+        postViews: 13674,
+        genre: 'Mystery',
+      },
+      {
+        avatar:
+          'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Lucy Jones',
+        username: 'lucy',
+        postViews: 11988,
+        genre: 'Fantasy',
+      },
+      {
+        avatar:
+          'https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Ahmad Jaelani',
+        username: 'jaelani',
+        postViews: 9214,
+        genre: 'Action & Adventure',
+      },
+      {
+        avatar:
+          'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        name: 'Jennifer Rowe',
+        username: 'jenn',
+        postViews: 8224,
+        genre: 'Romance',
+      },
+    ]
+
     return {
       pageViewOptions,
       pageViewSeries,
       sessionsOptions,
       sessionsSeries,
+      topAuthorToday,
+      topAuthorYesterday,
+      topAuthorLastWeek,
     }
   },
 }
