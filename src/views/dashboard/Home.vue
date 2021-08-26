@@ -252,9 +252,6 @@
                     <div class="text-2xl">{{ author.postViews }}</div>
                     <div class="text-sm">Post Views</div>
                   </td>
-                  <td class="p-2 text-right">
-                    <div class="text-sm">{{ author.genre }}</div>
-                  </td>
                   <td class="p-2 space-x-2 text-right">
                     <button class="p-1 rounded-md bg-green-500 text-white hover:bg-green-600">
                       <svg
@@ -310,9 +307,6 @@
                     <div class="text-2xl">{{ author.postViews }}</div>
                     <div class="text-sm">Post Views</div>
                   </td>
-                  <td class="p-2 text-right">
-                    <div class="text-sm">{{ author.genre }}</div>
-                  </td>
                   <td class="p-2 space-x-2 text-right">
                     <button class="p-1 rounded-md bg-green-500 text-white hover:bg-green-600">
                       <svg
@@ -367,9 +361,6 @@
                   <td class="p-2 text-right">
                     <div class="text-2xl">{{ author.postViews }}</div>
                     <div class="text-sm">Post Views</div>
-                  </td>
-                  <td class="p-2 text-right">
-                    <div class="text-sm">{{ author.genre }}</div>
                   </td>
                   <td class="p-2 space-x-2 text-right">
                     <button class="p-1 rounded-md bg-green-500 text-white hover:bg-green-600">
