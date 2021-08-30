@@ -105,7 +105,7 @@
     </div>
   </div>
 
-  <div class="grid grid-cols-1 px-4 gap-4 mt-8 sm:grid-cols-3">
+  <div class="grid grid-cols-1 px-4 gap-4 mt-8 sm:grid-cols-3 sm:px-8">
     <div class="px-4 py-2 bg-white border rounded-md overflow-hidden shadow">
       <h3 class="text-xl text-gray-600 mb-4">Page View</h3>
       <apexchart type="area" :height="300" :options="pageViewOptions" :series="pageViewSeries"></apexchart>
@@ -123,7 +123,7 @@
         <div class="flex flex-col">
           <div class="align-middle inline-block min-w-full">
             <div class="overflow-hidden border-0">
-              <table class="min-w-full divide-y divide-gray-200">
+              <table class="table-auto min-w-full divide-y divide-gray-200">
                 <thead>
                   <tr>
                     <th scope="col" class="py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -137,16 +137,16 @@
                 </thead>
                 <tbody class="divide-y divide-gray-200 text-sm text-gray-500">
                   <tr>
-                    <td class="py-1 whitespace-nowrap">Create an Admin Panel with Vue.js and Tailwind CSS</td>
-                    <td class="py-1 whitespace-nowrap text-sm text-gray-500">1,672</td>
+                    <td class="py-1">Create an Admin Panel with Vue.js and Tailwind CSS</td>
+                    <td class="py-1 text-sm text-gray-500">1,672</td>
                   </tr>
                   <tr>
-                    <td class="py-1 whitespace-nowrap">How To Center a Div</td>
-                    <td class="py-1 whitespace-nowrap text-sm text-gray-500">1,423</td>
+                    <td class="py-1">How To Center a Div</td>
+                    <td class="py-1 text-sm text-gray-500">1,423</td>
                   </tr>
                   <tr>
-                    <td class="py-1 whitespace-nowrap">Let's Star This Project</td>
-                    <td class="py-1 whitespace-nowrap text-sm text-gray-500">926</td>
+                    <td class="py-1">Let's Star This Project</td>
+                    <td class="py-1 text-sm text-gray-500">926</td>
                   </tr>
                 </tbody>
               </table>
@@ -201,7 +201,7 @@
     </div>
   </div>
 
-  <div class="grid grid-cols-1 gap-4 px-4 mt-8 sm:grid-cols-5">
+  <div class="grid grid-cols-1 gap-4 px-4 mt-8 sm:grid-cols-5 sm:px-8">
     <TabGroup>
       <div class="bg-white border rounded-lg shadow sm:col-span-2">
         <div
@@ -249,9 +249,9 @@
         <TabPanels class="px-4 py-2">
           <TabPanel>
             <table class="min-w-full text-gray-500">
-              <tbody class="">
+              <tbody>
                 <tr v-for="author in topAuthorToday" :key="author.username">
-                  <td class="flex items-center p-2">
+                  <td class="flex items-center py-2">
                     <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" :src="author.avatar" alt="" />
                     <div class="px-4">
                       <div>{{ author.name }}</div>
@@ -260,11 +260,11 @@
                       </div>
                     </div>
                   </td>
-                  <td class="p-2 text-right">
+                  <td class="py-2 text-right">
                     <div class="text-2xl">{{ author.postViews }}</div>
                     <div class="text-sm">Post Views</div>
                   </td>
-                  <td class="p-2 space-x-2 text-right">
+                  <td class="hidden py-2 space-x-2 text-right sm:block">
                     <button class="p-1 rounded-md bg-green-500 text-white hover:bg-green-600">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -304,9 +304,9 @@
           </TabPanel>
           <TabPanel>
             <table class="min-w-full text-gray-500">
-              <tbody class="">
+              <tbody>
                 <tr v-for="author in topAuthorYesterday" :key="author.username">
-                  <td class="flex items-center p-2">
+                  <td class="flex items-center py-2">
                     <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" :src="author.avatar" alt="" />
                     <div class="px-4">
                       <div>{{ author.name }}</div>
@@ -315,11 +315,11 @@
                       </div>
                     </div>
                   </td>
-                  <td class="p-2 text-right">
+                  <td class="py-2 text-right">
                     <div class="text-2xl">{{ author.postViews }}</div>
                     <div class="text-sm">Post Views</div>
                   </td>
-                  <td class="p-2 space-x-2 text-right">
+                  <td class="hidden py-2 space-x-2 text-right sm:block">
                     <button class="p-1 rounded-md bg-green-500 text-white hover:bg-green-600">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -359,9 +359,9 @@
           </TabPanel>
           <TabPanel>
             <table class="min-w-full text-gray-500">
-              <tbody class="">
+              <tbody>
                 <tr v-for="author in topAuthorLastWeek" :key="author.username">
-                  <td class="flex items-center p-2">
+                  <td class="flex items-center py-2">
                     <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" :src="author.avatar" alt="" />
                     <div class="px-4">
                       <div>{{ author.name }}</div>
@@ -370,11 +370,11 @@
                       </div>
                     </div>
                   </td>
-                  <td class="p-2 text-right">
+                  <td class="py-2 text-right">
                     <div class="text-2xl">{{ author.postViews }}</div>
                     <div class="text-sm">Post Views</div>
                   </td>
-                  <td class="p-2 space-x-2 text-right">
+                  <td class="hidden py-2 space-x-2 text-right sm:block">
                     <button class="p-1 rounded-md bg-green-500 text-white hover:bg-green-600">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -422,7 +422,7 @@
         <button class="border rounded-sm bg-gray-200 px-4 py-2 text-xs hover:bg-gray-300">View All</button>
       </div>
       <div class="px-4">
-        <table class="min-w-full divide-y divide-gray-200">
+        <table class="table-fixed min-w-full divide-y divide-gray-200">
           <thead>
             <tr>
               <th scope="col" class="py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
