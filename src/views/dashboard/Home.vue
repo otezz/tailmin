@@ -247,10 +247,10 @@
         </div>
 
         <TabPanels class="px-4 py-2">
-          <TabPanel>
+          <TabPanel v-for="topAuthor in topAuthors" :key="topAuthor">
             <table class="min-w-full text-gray-500">
               <tbody>
-                <tr v-for="author in topAuthorToday" :key="author.username">
+                <tr v-for="author in topAuthor" :key="author.username">
                   <td class="flex items-center py-2">
                     <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" :src="author.avatar" alt="" />
                     <div class="px-4">
@@ -264,117 +264,7 @@
                     <div class="text-2xl">{{ author.postViews }}</div>
                     <div class="text-sm">Post Views</div>
                   </td>
-                  <td class="hidden py-2 space-x-2 text-right sm:block">
-                    <button class="p-1 rounded-md bg-green-500 text-white hover:bg-green-600">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                        />
-                      </svg>
-                    </button>
-                    <button class="p-1 rounded-md bg-red-500 text-white hover:bg-red-600">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                        />
-                      </svg>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </TabPanel>
-          <TabPanel>
-            <table class="min-w-full text-gray-500">
-              <tbody>
-                <tr v-for="author in topAuthorYesterday" :key="author.username">
-                  <td class="flex items-center py-2">
-                    <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" :src="author.avatar" alt="" />
-                    <div class="px-4">
-                      <div>{{ author.name }}</div>
-                      <div class="font-bold text-sm">
-                        <a href="#">@{{ author.username }}</a>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-2 text-right">
-                    <div class="text-2xl">{{ author.postViews }}</div>
-                    <div class="text-sm">Post Views</div>
-                  </td>
-                  <td class="hidden py-2 space-x-2 text-right sm:block">
-                    <button class="p-1 rounded-md bg-green-500 text-white hover:bg-green-600">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                        />
-                      </svg>
-                    </button>
-                    <button class="p-1 rounded-md bg-red-500 text-white hover:bg-red-600">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                        />
-                      </svg>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </TabPanel>
-          <TabPanel>
-            <table class="min-w-full text-gray-500">
-              <tbody>
-                <tr v-for="author in topAuthorLastWeek" :key="author.username">
-                  <td class="flex items-center py-2">
-                    <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" :src="author.avatar" alt="" />
-                    <div class="px-4">
-                      <div>{{ author.name }}</div>
-                      <div class="font-bold text-sm">
-                        <a href="#">@{{ author.username }}</a>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-2 text-right">
-                    <div class="text-2xl">{{ author.postViews }}</div>
-                    <div class="text-sm">Post Views</div>
-                  </td>
-                  <td class="hidden py-2 space-x-2 text-right sm:block">
+                  <td class="hidden py-2 space-x-2 text-right sm:table-cell">
                     <button class="p-1 rounded-md bg-green-500 text-white hover:bg-green-600">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -703,6 +593,7 @@
 <script>
 import VueApexCharts from 'vue3-apexcharts'
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue'
+import topAuthors from '@/data/home/topAuthors.json'
 
 export default {
   components: {
@@ -749,143 +640,12 @@ export default {
 
     const sessionsSeries = [70.9, 27.2, 1.9]
 
-    const topAuthorToday = [
-      {
-        avatar:
-          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        name: 'Bagas Kuslaksono',
-        username: 'bagas',
-        postViews: 2380,
-        genre: 'Science Fiction',
-      },
-      {
-        avatar:
-          'https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        name: 'Ahmad Jaelani',
-        username: 'jaelani',
-        postViews: 2214,
-        genre: 'Action & Adventure',
-      },
-      {
-        avatar:
-          'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        name: 'Lucy Jones',
-        username: 'lucy',
-        postViews: 1988,
-        genre: 'Fantasy',
-      },
-      {
-        avatar:
-          'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        name: 'David Steele',
-        username: 'dave',
-        postViews: 1674,
-        genre: 'Mystery',
-      },
-      {
-        avatar:
-          'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        name: 'Jennifer Rowe',
-        username: 'jenn',
-        postViews: 1224,
-        genre: 'Romance',
-      },
-    ]
-
-    const topAuthorYesterday = [
-      {
-        avatar:
-          'https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        name: 'Ahmad Jaelani',
-        username: 'jaelani',
-        postViews: 2514,
-        genre: 'Action & Adventure',
-      },
-      {
-        avatar:
-          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        name: 'Bagas Kuslaksono',
-        username: 'bagas',
-        postViews: 2109,
-        genre: 'Science Fiction',
-      },
-      {
-        avatar:
-          'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        name: 'Jennifer Rowe',
-        username: 'jenn',
-        postViews: 1764,
-        genre: 'Romance',
-      },
-      {
-        avatar:
-          'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        name: 'Lucy Jones',
-        username: 'lucy',
-        postViews: 1450,
-        genre: 'Fantasy',
-      },
-      {
-        avatar:
-          'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        name: 'David Steele',
-        username: 'dave',
-        postViews: 1190,
-        genre: 'Mystery',
-      },
-    ]
-
-    const topAuthorLastWeek = [
-      {
-        avatar:
-          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        name: 'Bagas Kuslaksono',
-        username: 'bagas',
-        postViews: 15380,
-        genre: 'Science Fiction',
-      },
-      {
-        avatar:
-          'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        name: 'David Steele',
-        username: 'dave',
-        postViews: 13674,
-        genre: 'Mystery',
-      },
-      {
-        avatar:
-          'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        name: 'Lucy Jones',
-        username: 'lucy',
-        postViews: 11988,
-        genre: 'Fantasy',
-      },
-      {
-        avatar:
-          'https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        name: 'Ahmad Jaelani',
-        username: 'jaelani',
-        postViews: 9214,
-        genre: 'Action & Adventure',
-      },
-      {
-        avatar:
-          'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        name: 'Jennifer Rowe',
-        username: 'jenn',
-        postViews: 8224,
-        genre: 'Romance',
-      },
-    ]
-
     return {
       pageViewOptions,
       pageViewSeries,
       sessionsOptions,
       sessionsSeries,
-      topAuthorToday,
-      topAuthorYesterday,
-      topAuthorLastWeek,
+      topAuthors,
     }
   },
 }
