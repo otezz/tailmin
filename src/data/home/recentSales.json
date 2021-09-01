@@ -1,0 +1,37 @@
+[
+  {
+    "orderId": "TM0452",
+    "item": "iPhone 12",
+    "amount": 999,
+    "status": "Shipped",
+    "labelClass": "bg-green-500"
+  },
+  {
+    "orderId": "TM0451",
+    "item": "Playstation 5",
+    "amount": 399,
+    "status": "Processing",
+    "labelClass": "bg-blue-500"
+  },
+  {
+    "orderId": "TM0450",
+    "item": "Google Nest Mini 2",
+    "amount": 49,
+    "status": "Pending",
+    "labelClass": "bg-yellow-500"
+  },
+  {
+    "orderId": "TM0449",
+    "item": "Nike Air Jordan",
+    "amount": 129,
+    "status": "Failed",
+    "labelClass": "bg-red-500"
+  },
+  {
+    "orderId": "TM0448",
+    "item": "Smart Watch",
+    "amount": 299,
+    "status": "Pending",
+    "labelClass": "bg-yellow-500"
+  }
+]

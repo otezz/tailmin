@@ -337,48 +337,12 @@
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-200 text-sm text-gray-500">
-            <tr>
-              <td class="py-4 whitespace-nowrap">TM0452</td>
-              <td class="py-4 whitespace-nowrap text-sm text-gray-500">iPhone 12</td>
-              <td class="py-4 whitespace-nowrap text-sm text-gray-500">$999</td>
+            <tr v-for="sales in recentSales" :key="sales.orderId">
+              <td class="py-4 whitespace-nowrap">{{ sales.orderId }}</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">{{ sales.item }}</td>
+              <td class="py-4 whitespace-nowrap text-sm text-gray-500">${{ sales.amount }}</td>
               <td class="py-4 whitespace-nowrap text-sm text-gray-500">
-                <span class="px-2 py-1 bg-green-500 rounded text-xs text-white">Shipped</span>
-              </td>
-              <td class="py-4 whitespace-nowrap text-sm text-blue-600"><a href="#">View Detail</a></td>
-            </tr>
-            <tr>
-              <td class="py-4 whitespace-nowrap">TM0451</td>
-              <td class="py-4 whitespace-nowrap text-sm text-gray-500">Playstation 5</td>
-              <td class="py-4 whitespace-nowrap text-sm text-gray-500">$399</td>
-              <td class="py-4 whitespace-nowrap text-sm text-gray-500">
-                <span class="px-2 py-1 bg-blue-500 rounded text-xs text-white">Processing</span>
-              </td>
-              <td class="py-4 whitespace-nowrap text-sm text-blue-600"><a href="#">View Detail</a></td>
-            </tr>
-            <tr>
-              <td class="py-4 whitespace-nowrap">TM0450</td>
-              <td class="py-4 whitespace-nowrap text-sm text-gray-500">Google Nest Mini 2</td>
-              <td class="py-4 whitespace-nowrap text-sm text-gray-500">$49</td>
-              <td class="py-4 whitespace-nowrap text-sm text-gray-500">
-                <span class="px-2 py-1 bg-yellow-500 rounded text-xs text-white">Pending</span>
-              </td>
-              <td class="py-4 whitespace-nowrap text-sm text-blue-600"><a href="#">View Detail</a></td>
-            </tr>
-            <tr>
-              <td class="py-4 whitespace-nowrap">TM0449</td>
-              <td class="py-4 whitespace-nowrap text-sm text-gray-500">Nike Air Jordan</td>
-              <td class="py-4 whitespace-nowrap text-sm text-gray-500">$129</td>
-              <td class="py-4 whitespace-nowrap text-sm text-gray-500">
-                <span class="px-2 py-1 bg-red-500 rounded text-xs text-white">Failed</span>
-              </td>
-              <td class="py-4 whitespace-nowrap text-sm text-blue-600"><a href="#">View Detail</a></td>
-            </tr>
-            <tr>
-              <td class="py-4 whitespace-nowrap">TM0448</td>
-              <td class="py-4 whitespace-nowrap text-sm text-gray-500">Smart Watch</td>
-              <td class="py-4 whitespace-nowrap text-sm text-gray-500">$299</td>
-              <td class="py-4 whitespace-nowrap text-sm text-gray-500">
-                <span class="px-2 py-1 bg-yellow-500 rounded text-xs text-white">Pending</span>
+                <span class="px-2 py-1 rounded text-xs text-white" :class="sales.labelClass">{{ sales.status }}</span>
               </td>
               <td class="py-4 whitespace-nowrap text-sm text-blue-600"><a href="#">View Detail</a></td>
             </tr>
@@ -594,6 +558,7 @@
 import VueApexCharts from 'vue3-apexcharts'
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue'
 import topAuthors from '@/data/home/topAuthors.json'
+import recentSales from '@/data/home/recentSales.json'
 
 export default {
   components: {
@@ -646,6 +611,7 @@ export default {
       sessionsOptions,
       sessionsSeries,
       topAuthors,
+      recentSales,
     }
   },
 }
