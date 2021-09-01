@@ -1,5 +1,8 @@
 module.exports = {
-  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  purge: {
+    content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+    safelist: ['bg-blue-500', 'bg-yellow-500'],
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
