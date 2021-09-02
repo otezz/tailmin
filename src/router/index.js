@@ -10,6 +10,11 @@ const routes = [
         path: '',
         component: () => import('@/views/dashboard/Home.vue'),
       },
+      {
+        path: 'users',
+        name: 'user-list',
+        component: () => import('@/views/dashboard/users/UserList.vue'),
+      },
     ],
   },
   {

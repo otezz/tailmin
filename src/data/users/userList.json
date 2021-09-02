@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    "name": "Bagas Kuslaksono",
+    "email": "bagas@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "10 min ago",
+    "joinDate": "Aug 17, 2021"
+  },
+  {
+    "id": 2,
+    "avatar":"https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    "name": "Ahmad Jaelani",
+    "email": "jaelani@example.com",
+    "role": "Administrator",
+    "isActive": false,
+    "lastActivity": "4 hours ago",
+    "joinDate": "Feb 13, 2020"
+  },
+  {
+    "id": 3,
+    "avatar":"https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    "name": "Lucy Jones",
+    "email": "lucy@example.com",
+    "role": "Author",
+    "isActive": true,
+    "lastActivity": "2 days ago",
+    "joinDate": "Mar 9, 2019"
+  },
+  {
+    "id": 4,
+    "avatar":"https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    "name": "David Steele",
+    "email": "dave@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "139 days ago",
+    "joinDate": "Dec 24, 2022"
+  },
+  {
+    "id": 5,
+    "avatar":"https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    "name": "Jennifer Rowe",
+    "email": "jenn@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "7 days ago",
+    "joinDate": "Jun 15, 2012"
+  },
+  {
+    "id": 6,
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    "name": "Bagas Kuslaksono",
+    "email": "bagas@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "10 min ago",
+    "joinDate": "Aug 17, 2021"
+  },
+  {
+    "id": 7,
+    "avatar":"https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    "name": "Ahmad Jaelani",
+    "email": "jaelani@example.com",
+    "role": "Administrator",
+    "isActive": false,
+    "lastActivity": "4 hours ago",
+    "joinDate": "Feb 13, 2020"
+  },
+  {
+    "id": 8,
+    "avatar":"https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    "name": "Lucy Jones",
+    "email": "lucy@example.com",
+    "role": "Author",
+    "isActive": true,
+    "lastActivity": "2 days ago",
+    "joinDate": "Mar 9, 2019"
+  },
+  {
+    "id": 9,
+    "avatar":"https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    "name": "David Steele",
+    "email": "dave@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "139 days ago",
+    "joinDate": "Dec 24, 2022"
+  },
+  {
+    "id": 10,
+    "avatar":"https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    "name": "Jennifer Rowe",
+    "email": "jenn@example.com",
+    "role": "Super Admin",
+    "isActive": true,
+    "lastActivity": "7 days ago",
+    "joinDate": "Jun 15, 2012"
+  }
+]
