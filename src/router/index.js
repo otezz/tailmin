@@ -15,6 +15,11 @@ const routes = [
         name: 'user-list',
         component: () => import('@/views/dashboard/users/UserList.vue'),
       },
+      {
+        path: '/card',
+        name: 'card',
+        component: () => import('@/views/Card.vue'),
+      },
     ],
   },
   {
